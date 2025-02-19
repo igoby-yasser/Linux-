@@ -5,14 +5,14 @@ Ce document présente plusieurs théorèmes et concepts liés à l'intégration,
 ## 1. Théorèmes d'Intégration
 
 ### Théorème de Convergence Monotone
-Soit \( (f_n)_{n\geq 0} \) une suite croissante de fonctions intégrables et positives. Alors :
+Soit $$ \( (f_n)_{n\geq 0} \) $$ une suite croissante de fonctions intégrables et positives. Alors :
 
 $$
 \lim_{n\to\infty} \int f_n(x)dx = \int \lim_{n\to\infty} f_n(x)dx.
 $$
 
 ### Théorème de Convergence Dominée
-Soit \( (f_n)_{n\geq 0} \) une suite de fonctions intégrables et \( f \) une fonction intégrable telle que :
+Soit $$ \( (f_n)_{n\geq 0} \) $$ une suite de fonctions intégrables et \( f \) une fonction intégrable telle que :
 
 - \( \lim_{n\to\infty} f_n(x) = f(x) \) presque partout.
 - Il existe une fonction intégrable \( \phi \) telle que \( |f_n(x)| \leq \phi(x) \).
