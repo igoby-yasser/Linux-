@@ -1,46 +1,104 @@
-# Math Formulas :
+# Math Important Formulas and Concepts :
 
-## La dérivée partielle de f par rapport à xk est donnée par :
+# Théorèmes et Séries en Analyse Mathématique
+
+Ce document présente plusieurs théorèmes et concepts liés à l'intégration, aux séries de fonctions, aux séries entières et aux séries de Fourier.
+
+## 1. Théorèmes d'Intégration
+
+### Théorème de Convergence Monotone
+Soit \( (f_n)_{n\geq 0} \) une suite croissante de fonctions intégrables et positives. Alors :
 $$
-\frac{\partial f(x_1, x_2, \dots, x_n)}{\partial x_k} = \frac{\partial f(x_1, x_2, \dots, x_n)}{\partial x_k}
-$$
-
-La dérivée partielle de \( f(x_1, x_2, \dots, x_n) \) par rapport à \( x_k \) est donnée par :
-
-$$
-\frac{\partial f(x_1, x_2, \dots, x_n)}{\partial x_k}
-$$
-
-Cela représente la variation de la fonction \( f \) par rapport à la variable \( x_k \) tout en maintenant les autres variables constantes.
-
-### Gradient
-Le gradient de \( f(x_1, x_2, \dots, x_n) \) est le vecteur des dérivées partielles de \( f \) par rapport à chacune des variables :
-
-$$
-\nabla f(x_1, x_2, \dots, x_n) = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \dots, \frac{\partial f}{\partial x_n} \right)
+\lim_{n\to\infty} \int f_n(x)dx = \int \lim_{n\to\infty} f_n(x)dx.
 $$
 
-Cela donne la direction de la plus grande augmentation de la fonction.
+### Théorème de Convergence Dominée
+Soit \( (f_n)_{n\geq 0} \) une suite de fonctions intégrables et \( f \) une fonction intégrable telle que :
 
-### Hessienne
-La matrice Hessienne est la matrice des dérivées secondes de \( f \) :
+- \( \lim_{n\to\infty} f_n(x) = f(x) \) presque partout.
+- Il existe une fonction intégrable \( \phi \) telle que \( |f_n(x)| \leq \phi(x) \).
 
+Alors :
 $$
-H(f) = \begin{pmatrix}
-\frac{\partial^2 f}{\partial x_1^2} & \frac{\partial^2 f}{\partial x_1 \partial x_2} & \dots & \frac{\partial^2 f}{\partial x_1 \partial x_n} \\
-\frac{\partial^2 f}{\partial x_2 \partial x_1} & \frac{\partial^2 f}{\partial x_2^2} & \dots & \frac{\partial^2 f}{\partial x_2 \partial x_n} \\
-\vdots & \vdots & \ddots & \vdots \\
-\frac{\partial^2 f}{\partial x_n \partial x_1} & \frac{\partial^2 f}{\partial x_n \partial x_2} & \dots & \frac{\partial^2 f}{\partial x_n^2}
-\end{pmatrix}
+\lim_{n\to\infty} \int f_n(x)dx = \int f(x)dx.
 $$
 
-Cela fournit des informations sur la courbure de la fonction et aide à déterminer si un point est un maximum, un minimum ou un point selle.
+## 2. Séries de Fonctions
 
-### Définition de la Dérivée
-La dérivée d'une fonction à un point mesure la variation instantanée de la fonction à ce point. Pour une fonction \( f(x) \), la dérivée est :
-
+### Convergence Simple
+Une série de fonctions \( \sum f_n(x) \) converge simplement sur \( J \) si :
 $$
-f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+\lim_{n\to\infty} S_n(x) = \sum_{n=0}^{\infty} f_n(x)
+$$
+pour tout \( x \in J \).
+
+### Convergence Uniforme
+Une série de fonctions \( \sum f_n(x) \) converge uniformément sur \( J \) si :
+$$
+\sup_{x\in J} |S_n(x) - S(x)| \to 0 \quad \text{quand } n \to \infty.
 $$
 
-Cela représente la pente de la tangente à la courbe de \( f(x) \) en un point donné.
+### Critère de Weierstrass
+Si il existe une série numérique \( \sum a_n \) convergente telle que :
+$$
+\forall x \in J, \forall n \in \mathbb{N}, |f_n(x)| \leq a_n,
+$$
+alors la série \( \sum f_n(x) \) converge uniformément.
+
+## 3. Séries Entières
+
+### Rayon de Convergence
+Une série entière s’écrit sous la forme :
+$$
+\sum a_n z^n.
+$$
+Son rayon de convergence est donné par :
+$$
+R = \frac{1}{\limsup_{n\to\infty} \sqrt[n]{|a_n|}}.
+$$
+
+### Dérivation et Intégration des Séries Entières
+Si \( \sum a_n z^n \) a un rayon de convergence \( R \), alors on peut la dériver terme à terme :
+$$
+\left( \sum a_n z^n \right)' = \sum n a_n z^{n-1}.
+$$
+De même, sa primitive est donnée par :
+$$
+\int \sum a_n z^n dz = \sum \frac{a_n}{n+1} z^{n+1}.
+$$
+
+## 4. Séries de Fourier
+
+### Définition
+Une série de Fourier associée à une fonction \( f \) est donnée par :
+$$
+\frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n \cos(nx) + b_n \sin(nx) \right]
+$$
+avec les coefficients :
+$$
+a_n = \frac{1}{\pi} \int_{0}^{2\pi} f(x) \cos(nx) dx, \quad
+b_n = \frac{1}{\pi} \int_{0}^{2\pi} f(x) \sin(nx) dx.
+$$
+
+### Théorème de Dirichlet
+Si \( f \) est une fonction périodique vérifiant les conditions de Dirichlet, alors sa série de Fourier converge et :
+$$
+\sum_{n=1}^{\infty} \left[ a_n \cos(nx) + b_n \sin(nx) \right] \to f(x).
+$$
+
+### Égalité de Parseval
+Si \( f \) est développable en série de Fourier, alors :
+$$
+\frac{a_0^2}{2} + \sum_{n=1}^{\infty} (a_n^2 + b_n^2) = \frac{1}{\pi} \int_{0}^{2\pi} f^2(x) dx.
+$$
+
+---
+
+**Références :**
+- Théorèmes d’intégration
+- Séries de fonctions et convergence
+- Séries entières et rayon de convergence
+- Développement en séries de Fourier
+
+---
+
