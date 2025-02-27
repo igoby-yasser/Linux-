@@ -18,7 +18,6 @@
 ## 2. Manipulation des fichiers et répertoires
 
 ### Lecture de fichiers
-- `cat [fichier]` : Affiche le contenu d'un fichier.
 - `more [fichier]` : Affiche le fichier page par page.
 - `less [fichier]` : Similaire à `more` avec la possibilité de revenir en arrière.
 - `head [fichier]` : Affiche les premières lignes du fichier.
