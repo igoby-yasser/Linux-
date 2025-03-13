@@ -9,6 +9,8 @@
 - `ls` : Liste les fichiers et dossiers du répertoire actuel.
 - `cd [répertoire]` : Change de répertoire.
 - `cd ..` : Remonte d'un niveau dans l'arborescence.
+- `cd ~` : Navigation vers home directory equivalent to : cd /home/your-username/.
+- `touch ~/myfile.txt` : Creer un fichier dans home directory.
 
 ### Manuel et Aide
 - `man [commande]` : Affiche la documentation d'une commande.
