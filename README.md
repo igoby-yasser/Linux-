@@ -32,6 +32,7 @@
 - `mv [source] [destination]` : Déplace ou renomme un fichier/dossier.
 - `rm [fichier]` : Supprime un fichier.
 - `rm -r [répertoire]` : Supprime un répertoire et son contenu.
+-  `echo "Something" > fichier.txt` : Ecrire quelque chose dans un fichier txt.
 
 ## 3. Gestion du système de fichiers
 
